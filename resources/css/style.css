@@ -1,0 +1,958 @@
+.ul {
+
+  margin-left: 80px;
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  list-style: none;
+}
+.li {
+  margin-bottom: 0px;
+}
+.button {
+  background-color: transparent;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+  border: none;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 10px 30px;
+  cursor: pointer;
+  position: relative;
+  padding-left: 11px;
+  text-align: center;
+  transition: 0.1s;
+  z-index: 1;
+}
+
+.p {
+  z-index: 2;
+  position: relative;
+  top: -20px;
+}
+
+.button:hover {
+  color: #a2907e;
+  text-align: center;
+  color: #ffffff;
+}
+.button:hover::before {
+  transform: rotate(0deg);
+  width: 100%;
+  height: 40px;
+  top: 2px;
+  border-radius: 3px;
+  background-color: #cab49d;
+ 
+}
+.button::before {
+  content: "";
+  border-radius: 1px;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #cab49d;
+  left: -10px;
+  top: 19px;
+  cursor: pointer;
+  transform: rotate(225deg);
+  transition: 0.3s;
+  z-index: -1;
+}
+
+.button:active::before {
+  background-color: #a2907e;
+}
+body {
+  justify-content: center; /* وضع المحتوى أفقياً في المنتصف */
+  align-items: center; /* وضع المحتوى عمودياً في المنتصف */
+  height: 100vh; /* جعل الصفحة تأخذ الارتفاع الكامل */
+  margin: 0; /* إزالة أي مسافات إضافية */
+  background-color: #f4f4f4; /* لون خلفية */
+  scroll-behavior: smooth; /* لجعل التمرير سلساً */
+  color: #555; /* لون النص */
+  font-family: "Cairo", sans-serif; /* الخط المستخدم */
+  font-size: 20px; /* حجم النص */
+  font-weight: 400; /* عرض الخط: 400 تعني عادي (Normal) */
+}
+
+
+/* From Uiverse.io by gharsh11032000 */ 
+.menu {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000;
+  width: fit-content;
+  display: flex;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.menu .link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 36px;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menu .link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3871c1;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menu .link svg {
+  width: 14px;
+  height: 14px;
+  fill: #000000;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menu .item {
+  position: relative;
+}
+
+.menu .item .submenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  border-radius: 0 0 16px 16px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #cccccc;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
+  pointer-events: none;
+  list-style: none;
+}
+
+.menu .item:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  border-top: transparent;
+  border-color: #3871c1;
+}
+
+.menu .item:hover .link {
+  color: #ffffff;
+  border-radius: 16px 16px 0 0;
+}
+
+.menu .item:hover .link::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.menu .item:hover .link svg {
+  fill: #ffffff;
+  transform: rotate(-180deg);
+}
+
+.submenu .submenu-item {
+  width: 100%;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.submenu .submenu-link {
+  display: block;
+  padding: 12px 24px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.submenu .submenu-item:last-child .submenu-link {
+  border-bottom: none;
+}
+
+.submenu .submenu-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  width: 100%;
+  height: 100%;
+  background-color: #3871c1;
+  z-index: -1;
+  transform-origin: left;
+  transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.submenu .submenu-link:hover:before {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.submenu .submenu-link:hover {
+  color: #ffffff;
+}
+header {
+  z-index: 1000;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../img/BG.png);
+  background-size: cover; /* يجعل الصورة تغطي العنصر بالكامل */
+  background-position: center; /* يضمن أن الصورة في المنتصف */
+  background-repeat: no-repeat; /* يمنع تكرار الصورة */
+  height: 80vh; /* يجعل ارتفاع العنصر يغطي الشاشة بالكامل */
+  background-attachment: fixed; /* يثبت الخلفية أثناء التمرير */
+}
+/* تصميم الإطار */
+.navbar {
+  display: flex;
+  
+  top: 0;
+  left: 0;
+  width: 100%; /* عرض الإطار يغطي الشاشة */
+  background-color: #ffffff; /* لون الخلفية */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* إضافة ظل للإطار */
+  padding: 10px 20px; /* مسافة داخلية */
+  z-index: 1000; /* ضمان أن الإطار يظهر فوق العناصر الأخرى */
+}
+/* تنسيق الشعار */
+.logo img {
+  position: relative;
+  margin-top: -10px;
+  flex: 1;
+  height: 100px; /* حجم الشعار */
+  cursor: pointer; /* مؤشر الفأرة */
+}
+
+.main-heading {
+  text-align: center;
+  font-size: 24px; /* Adjust the font size */
+  font-weight: bold;
+  color: #333; /* You can change the text color */
+  padding: 20px;
+  max-width: 80%; /* Optional: Control the width of the text block */
+  margin-top: 200px;
+  margin-left: -890px;
+  width: 500px;
+}
+.highlight {
+  color: #a2907e; /* اختر اللون الذي تريده */
+  font-weight: bold; /* يمكنك إضافة سمك الخط إذا رغبت */
+}
+.request-button {
+  background-color: #cab49d; /* اللون الأساسي للزر */
+  color: white; /* لون النص */
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* مسافة فوق الزر */
+  display: block; /* التأكد من أن الزر في سطر جديد */
+  text-align: center;
+  margin-left: 50px;
+ 
+}
+
+.request-button:hover {
+  background-color: #a2907e; /* تغيير اللون عند التحويم */
+}
+.button-container {
+  display: flex; /* استخدام Flexbox لتوزيع الأزرار أفقيا */
+  justify-content: flex-start; /* ترتيب الأزرار بداية السطر */
+  gap: 20px; /* مسافة بين الأزرار */
+  margin-top: -20px; /* مسافة من الأعلى */
+}
+
+.another-button {
+  background-color: #f0f0f0; /* اللون الأساسي للزر */
+  color: #a2907e; /* لون النص */
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* مسافة فوق الزر */
+  display: block; /* التأكد من أن الزر في سطر جديد */
+  text-align: center;
+  margin-left: 30px;
+  border: 1px solid #a2907e;
+}
+
+.another-button:hover {
+  background-color: #a2907e; /* تغيير اللون عند التحويم */
+  color: #ffffff;
+}
+.language-selector {
+  position: absolute;
+  top: 30px;
+  left: 1100px; /* يمكن تعديل هذه القيمة حسب الحاجة */
+  z-index: 1000;
+}
+
+#language-select {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 25px; /* جعل الحواف دائرية */
+  border: 1px solid #a2907e; /* لون الإطار */
+  background-color: #cab49d; /* لون الخلفية */
+  color: #ffffff; /* لون النص */
+  cursor: pointer;
+  transition: all 0.3s ease; /* تأثير التغيير عند التحويم */
+}
+
+#language-select:hover {
+  background-color: #a2907e; /* تغيير الخلفية عند التحويم */
+  color: white; /* تغيير لون النص عند التحويم */
+  border-color: #a2907e; /* تغيير لون الحدود عند التحويم */
+}
+
+#language-select:focus {
+  outline: none; /* إزالة الإطار الافتراضي عند التركيز */
+  border-color: #a2907e; /* تغيير لون الإطار عند التركيز */
+}
+
+#language-select option {
+  background-color: #fff; /* خلفية خفيفة لخيار القائمة */
+  color: #a2907e; /* لون النص في القائمة */
+}
+
+#language-select option:hover {
+  background-color: #a2907e; /* خلفية عند التحويم على خيار في القائمة */
+  color: white; /* تغيير لون النص عند التحويم */
+}
+.main-heading {
+  text-align: left; /* إذا كنت تريد محاذاة النص لليسار */
+  margin-left: -1000px; /* تحريك العناصر قليلاً لليسار */
+  margin-top: 75px; /* قم بتعديل هذه القيمة لرفع النص أو خفضه */
+} 
+.sectiom-featurs {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../img/secRB.png);
+  background-attachment: fixed;
+  background-size: cover; /* يجعل الصورة تغطي العنصر بالكامل */
+  background-position: center; /* يضمن أن الصورة في المنتصف */
+  background-repeat: no-repeat; /* يمنع تكرار الصورة */
+  height: 90vh; /* يجعل ارتفاع العنصر يغطي الشاشة بالكامل */
+}
+
+.row h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+ 
+}
+
+.row .text {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+ 
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card ion-icon {
+  font-size: 60px;
+  color: #a2907e;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.card:hover ion-icon {
+  color: #cab49d;
+}
+
+.card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+.download-app {
+  margin-top: 100px; /* يمكنك تعديل القيمة حسب الحاجة */
+  padding: 50px 0;
+  background-color: #f9f9f9; /* يمكنك تعديل الخلفية حسب التصميم */
+}
+
+.download-app .container {
+  position: relative; /* لتحديد مرجعية الموضع للعناصر المطلقة */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* تنسيق الشعار واسم التطبيق */
+.logo-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  width: 50px; /* يمكنك تعديل الحجم حسب الحاجة */
+}
+
+.logo-text {
+  font-weight: bold;
+  margin-left: 8px; /* مسافة بسيطة بين الشعار والاسم */
+  font-size: 1.2rem; /* حجم الخط يمكن تعديله حسب التصميم */
+  color: #000; /* لون النص */
+}
+
+
+.group-logo {
+  position: absolute;
+  top: 4px;   /* المسافة من الأعلى */
+  left: 10px; /* المسافة من اليمين */
+  width: 70px; /* يمكنك تعديل الحجم حسب التصميم */
+}
+
+
+.download-info {
+  flex: 1;
+  text-align: center;
+  margin-right: 70px; 
+}
+
+.download-text {
+  font-size: 1.2em;
+  margin-bottom: 45px;
+}
+
+.download-buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column; /* ترتيب العناصر عموديًا */
+  gap: 10px;            /* مسافة 10px بين كل زر */
+  align-items: center;   /* توسيط الأزرار أفقيًا */
+}
+
+
+.download-btn {
+  display: inline-block;   /* عرض الزر يعتمد على محتواه */
+  padding: 12px 20px;
+  background-color: #cab49d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;       /* حواف دائرية */
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #a2907e;
+}
+
+.phone-preview {
+  flex: 1;
+  text-align: right;
+}
+
+.phone-preview img.phone {
+  width: 120%; /* يمكنك تعديل الحجم حسب الحاجة */
+  transition: transform 0.6s ease;
+}
+
+.phone-preview:hover img.phone {
+  transform: rotateY(20deg); /* دوران بسيط عند المرور */
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.how-to-use {
+  padding: 50px 0;
+  text-align: center;
+  background-color: #fff; /* Adjust background as needed */
+}
+
+.how-to-use h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.images-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Space between each image */
+}
+
+.images-stack img {
+  max-width: 90%; /* Adjust as needed */
+  height: auto;
+  display: block;
+}
+
+/* Testimonials Section Styling */
+.testimonials {
+  padding: 60px 20px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../img/BB.png);
+  background-size: cover;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  min-height: 400px; /* تأكد أن له ارتفاع */
+}
+
+
+.testimonials-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials-container {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.testimonial {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #a2907e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 auto 20px;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.testimonial-author {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* General Styles */
+footer {
+  background-color: #2c3e50; /* Dark blue background */
+  color: #ecf0f1; /* Light text color */
+  padding: 60px 20px; /* Increased padding for a larger footer */
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; /* Vertically center items */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 40px; /* Increased space between items */
+  margin-bottom: 20px;
+  max-width: 1200px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the content */
+}
+
+.footer-image img {
+  width: 250px; /* Larger image size */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: Rounded corners */
+}
+
+.motivational-quotes {
+  max-width: 400px; /* Increased width for larger text */
+  text-align: left; /* Align text to the left */
+}
+
+.motivational-quotes h3 {
+  font-size: 1.8em; /* Larger heading */
+  margin-bottom: 15px;
+}
+
+.motivational-quotes p {
+  font-style: normal; /* Remove italic style */
+  font-size: 1.1em; /* Slightly larger text */
+  margin: 10px 0; /* Increased margin */
+}
+
+.social-media, .contact-info {
+  flex: 1;
+  min-width: 150px;
+  margin: 10px;
+}
+
+.social-media h3, .contact-info h3 {
+  font-size: 1.8em; /* Larger heading */
+  margin-bottom: 15px;
+}
+
+.social-media ul {
+  list-style: none;
+  padding: 0;
+}
+
+.social-media ul li {
+  margin: 10px 0; /* Increased margin */
+}
+
+.social-media ul li a {
+  color: #ecf0f1; /* Light text color */
+  text-decoration: none;
+  font-size: 1.1em; /* Slightly larger text */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+}
+
+.social-media ul li a:hover {
+  color: #3498db; /* Change color on hover */
+}
+
+.contact-info p {
+  margin: 10px 0; /* Increased margin */
+  font-size: 1.1em; /* Slightly larger text */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+  position: relative; /* Enable positioning */
+  left: -30px; /* Move the email slightly to the left */
+}
+
+.contact-info a {
+  color: #ecf0f1; /* Light text color */
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: #3498db; /* Change color on hover */
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(236, 240, 241, 0.1); /* Light border */
+  padding-top: 20px; /* Increased padding */
+  font-size: 1em;
+  margin-top: 40px; /* Increased margin */
+}
+
+/* أنماط المودال العامة */
+.modal {
+  display: none; /* مخفي افتراضياً */
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* ميديا كويريز للشاشات المتوسطة */
+@media (max-width: 1024px) {
+  .container {
+    width: 95%;
+  }
+  .main-heading {
+    font-size: 1.8em;
+  }
+}
+
+  /* أنماط عامة */
+    body {
+      background: #f2f2f2;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    /* إزالة التزيين لكلمة "Download Now" في الهيدر */
+    a.request-button {
+      text-decoration: none;
+    }
+    /* رأس الصفحة */
+    .navbar {
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 10px 20px;
+      position: relative;
+    }
+    /* قائمة اختيار اللغة في الهيدر */
+    .language-selector {
+      position: absolute;
+      top: 30px;
+      left: 1100px; /* يمكن تعديل القيمة حسب الحاجة */
+      z-index: 1000;
+    }
+    #language-select {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 25px;
+      border: 1px solid #a2907e;
+      background-color: #cab49d;
+      color: #ffffff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #language-select:hover {
+      background-color: #a2907e;
+      color: white;
+      border-color: #a2907e;
+    }
+    #language-select:focus {
+      outline: none;
+      border-color: #a2907e;
+    }
+    #language-select option {
+      background-color: #fff;
+      color: #a2907e;
+    }
+    #language-select option:hover {
+      background-color: #a2907e;
+      color: white;
+    }
+    /* باقي أنماط الصفحة موجودة في ملفات CSS الخارجية */
+
+    /* --- أنماط المودال --- */
+    .modal {
+      display: none; /* مخفي بشكل افتراضي */
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 800px;
+      border-radius: 8px;
+      position: relative;
+      text-align: center;
+    }
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+    }
+    /* زر اختيار اللغة داخل المودال */
+    .modal-language-selector {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    #modal-language-select,
+    #modal-about-select {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 25px;
+      border: 1px solid #a2907e;
+      background-color: #cab49d;
+      color: #ffffff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #modal-language-select:hover,
+    #modal-about-select:hover {
+      background-color: #a2907e;
+      color: white;
+      border-color: #a2907e;
+    }
+    #modal-language-select:focus,
+    #modal-about-select:focus {
+      outline: none;
+      border-color: #a2907e;
+    }
+    #modal-language-select option,
+    #modal-about-select option {
+      background-color: #fff;
+      color: #a2907e;
+    }
+    #modal-language-select option:hover,
+    #modal-about-select option:hover {
+      background-color: #a2907e;
+      color: white;
+    }
+    /* محتوى المودال (الشروط أو "About Us") */
+    #modal-terms-content,
+    #modal-about-content {
+      max-height: 500px;
+      overflow-y: auto;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    /* بعض الأنماط لعناوين المحتوى */
+    #modal-terms-content h1,
+    #modal-about-content h1 {
+      text-align: center;
+    }
+    .colored {
+      color: blue;
+      font-weight: bold;
+    }
+    .email {
+      color: blue;
+      font-weight: bold;
+    }
+    /* أنماط مودال تحميل الـ APK */
+    #downloadModal h1 {
+      margin-top: 0;
+    }
+    #downloadModal p {
+      margin: 10px 0;
+    }
+    #downloadModal .download-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #a2907e;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: background-color 0.3s ease;
+    }
+    /* إزالة الخط تحت كلمة Download عند hover */
+    #downloadModal .download-link:hover {
+      background-color: #cab49d;
+      text-decoration: none;
+    }
+
+    

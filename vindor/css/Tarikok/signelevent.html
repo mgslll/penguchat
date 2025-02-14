@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التسجيل</title>
+    <link rel="stylesheet" href="sign.css"> <!-- رابط ملف التنسيق CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>التسجيل</header>
+
+        <form id="signup-form" action="signelevent.php" method="POST">
+            <!-- حقل البريد الإلكتروني -->
+            <div class="field email">
+                <div class="input-area">
+                    <i class="icon fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <!-- حقل رقم الهاتف -->
+            <div class="field phone">
+                <div class="input-area">
+                    <i class="icon fas fa-phone-alt"></i>
+                    <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <!-- حقل المستوى التعليمي -->
+            <div class="field education-level">
+                <div class="input-area">
+                    <i class="icon fas fa-school"></i>
+                    <select id="education-level" name="education-level" required>
+                        <option value="" disabled selected>اختر المستوى التعليمي</option>
+                        <option value="Elementary">ابتدائي</option>
+                        <option value="Middle 1">السنة 1 متوسط</option>
+                        <option value="Middle 2">السنة 2 متوسط</option>
+                        <option value="Middle 3">السنة 3 متوسط</option>
+                        <option value="BEAM">بيام</option>
+                        <option value="Secondary 1">السنة 1 ثانوي</option>
+                        <option value="Secondary 2">السنة 2 ثانوي</option>
+                        <option value="Baccalaureate">بكالوريا</option>
+                    </select>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <!-- حقل المواد -->
+            <div class="field subjects">
+                <label for="subjects">اختر المــواد</label>
+                <div class="subjects-list">
+                    <div class="subject-item">
+                        <input type="checkbox" id="sciences" name="subjects[]" value="Sciences">
+                        <label for="sciences">علوم الطبيعة والحياة</label>
+                    </div>
+                    <div class="subject-item">
+                        <input type="checkbox" id="mathematics" name="subjects[]" value="Mathematics">
+                        <label for="mathematics">الرياضيات</label>
+                    </div>
+                    <div class="subject-item">
+                        <input type="checkbox" id="physics" name="subjects[]" value="Physics">
+                        <label for="physics">الفيزياء</label>
+                    </div>
+                    <div class="subject-item">
+                        <input type="checkbox" id="english" name="subjects[]" value="English">
+                        <label for="english">الإنجليزية</label>
+                    </div>
+                    <div class="subject-item">
+                        <input type="checkbox" id="arabic" name="subjects[]" value="Arabic">
+                        <label for="arabic">اللغة العربية</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- حقل كلمة المرور -->
+            <div class="field password">
+                <div class="input-area">
+                    <i class="icon fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="كلمة المرور" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <!-- حقل تأكيد كلمة المرور -->
+            <div class="field confirm-password">
+                <div class="input-area">
+                    <i class="icon fas fa-lock"></i>
+                    <input type="password" id="confirm-password" placeholder="تأكيد كلمة المرور" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <!-- زر التسجيل مع الحدث onclick -->
+            <input type="submit" value="التسجيل" >
+
+            <div class="sign-txt">لديك حساب؟ <a href="index1.html">تسجيل الدخول</a></div>
+        </form>
+
+        <!-- مكان عرض الرسالة -->
+        
+    </div>
+
+    <script src="script.js"></script> <!-- رابط ملف JavaScript -->
+   
+</body>
+
+</html>

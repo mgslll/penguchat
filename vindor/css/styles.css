@@ -1,0 +1,44 @@
+
+.about-project {
+    
+    padding-top: 100px; /* تأكد من إضافة المسافة المناسبة بين الهيدر والمحتوى */
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .about-project h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about-project p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .about-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .about-images img {
+    width: 45%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, z-index 0s ease 0.3s; /* إضافة انتقال سلس */
+  }
+
+/* التأثير عند التحويم */
+.about-images img:hover {
+  transform: scale(1.05); /* تكبير الصورة قليلاً */
+  z-index: 10; /* رفع الصورة للأمام */
+}
+  

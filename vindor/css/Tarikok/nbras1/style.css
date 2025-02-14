@@ -1,0 +1,129 @@
+/* CSS code for responsive design */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100vh; /* تأكد من أن الصفحة تغطي كامل العرض */
+    display: flex;
+    justify-content: flex-start; /* رفع المحتوى للأعلى */
+    align-items: flex-start; /* محاذاة المحتوى للأعلى */
+    overflow-y: scroll; /* تمكين التمرير العمودي */
+    background: linear-gradient(120deg, #4facfe, #00f2fe);
+    animation: backgroundAnimation 6s infinite alternate;
+    background-size: cover;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.register-container {
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: auto;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.register-container h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 24px;
+}
+
+.input-field {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+.input-field input,
+.input-field select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+}
+
+.input-field input[type="submit"] {
+    background: #4facfe;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.input-field input[type="submit"]:hover {
+    background: #00aaff;
+}
+
+.login-link {
+    margin-top: 1rem;
+    font-size: 14px;
+    color: #555;
+}
+
+.login-link a {
+    color: #4facfe;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body {
+        background-size: auto; /* تعديل الخلفية لتناسب الشاشات الصغيرة */
+        justify-content: flex-start; /* رفع المحتوى للأعلى */
+    }
+
+    .register-container {
+        width: 100%; /* أخذ عرض كامل الصفحة */
+        padding: 1.5rem; /* تقليل padding */
+        min-height: auto; /* تغيير الحد الأدنى للطول لتناسب الشاشات الصغيرة */
+    }
+
+    .register-container h2 {
+        font-size: 20px; /* تقليل حجم العنوان */
+    }
+
+    .input-field input, 
+    .input-field select {
+        font-size: 14px; /* تقليل حجم الخط في الحقول */
+        padding: 8px;  /* تقليل padding */
+    }
+
+    .input-field input[type="submit"] {
+        font-size: 16px;  /* تصغير حجم الخط في زر الإرسال */
+    }
+
+    .login-link {
+        font-size: 14px;
+    }
+}

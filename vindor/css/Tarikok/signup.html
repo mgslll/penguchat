@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التسجيل</title>
+    <link rel="stylesheet" href="sign.css"> <!-- رابط ملف التنسيق CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>التسجيل</header>
+
+        <form id="signup-form" action="signup.php" method="POST" enctype="multipart/form-data">
+            <div class="field email">
+                <div class="input-area">
+                    <i class="icon fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <div class="field phone">
+                <div class="input-area">
+                    <i class="icon fas fa-phone-alt"></i>
+                    <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <div class="field password">
+                <div class="input-area">
+                    <i class="icon fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="كلمة المرور" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <div class="field confirm-password">
+                <div class="input-area">
+                    <i class="icon fas fa-lock"></i>
+                    <input type="password" id="confirm-password"  placeholder="تأكيد كلمة المرور" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <div class="field file-upload">
+                <div class="input-area">
+                    <i class="icon fas fa-upload"></i>
+                    <input type="file" id="cv" name="cv" >
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">الرجاء رفع السيرة الذاتية بصيغة PDF أو Word</div>
+            </div>
+
+            <input type="submit" value="التسجيل" >
+
+            <div class="sign-txt">لديك حساب؟ <a href="index1.html">تسجيل الدخول</a></div>
+        </form>
+    </div>
+
+   
+
+    <script src="script.js"></script> <!-- رابط ملف JavaScript -->
+    
+</body>
+
+</html>

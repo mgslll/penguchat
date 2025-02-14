@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PenguChat</title>
+  <!-- الروابط الخارجية -->
+  <link rel="stylesheet" href="resources/css/style.css" />
+  <link rel="stylesheet" href="vindor/css/styles.css" />
+  <link rel="stylesheet" href="vindor/css/10cols.css" />
+  <link rel="stylesheet" href="vindor/css/11cols.css" />
+  <link rel="stylesheet" href="vindor/css/12cols.css" />
+  <link rel="stylesheet" href="vindor/css/2cols.css" />
+  <link rel="stylesheet" href="vindor/css/3cols.css" />
+  <link rel="stylesheet" href="vindor/css/4cols.css" />
+  <link rel="stylesheet" href="vindor/css/5cols.css" />
+  <link rel="stylesheet" href="vindor/css/6cols.css" />
+  <link rel="stylesheet" href="vindor/css/7cols.css" />
+  <link rel="stylesheet" href="vindor/css/8cols.css" />
+  <link rel="stylesheet" href="vindor/css/9cols.css" />
+  <link rel="stylesheet" href="vindor/css/col.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@300&family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="vindor/css/normalize.css" />
+  <link href="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/css/ionicons.min.css" rel="stylesheet" />
+
+  
+</head>
+<body>
+  <!-- رأس الصفحة -->
+  <header class="navbar">
+    
+    <div class="language-selector">
+      <select id="language-select" onchange="changeLanguage()">
+        <option value="ar">العربية</option>
+        <option value="en" selected>English</option>
+        <option value="fr">Français</option>
+      </select>
+    </div>
+    <div class="logo">
+      <a href="#" id="logo-link">
+        <img id="logo-img" src="resources/img/app_icon.png" alt="Logo">
+      </a>
+    </div>
+    <ul class="ul">
+      <li class="li">
+        <button class="button" id="menu-Our Services"><p class="p">Our Services</p></button>
+      </li>
+      <li class="li">
+        <button class="button" id="menu-About Us"><p class="p">About Us</p></button>
+      </li>
+      <li class="li">
+        <button class="button" id="menu-Partners"><p class="p">Partners</p></button>
+      </li>
+      <li class="li">
+        <!-- زر الشروط والأحكام -->
+        <button class="button" id="menu-Terms and Conditions"><p class="p">Terms and Conditions</p></button>
+      </li>
+      <li class="li">
+        <button class="button" id="menu-News"><p class="p">News</p></button>
+      </li>
+    </ul>
+    <div class="main-heading">
+      <h1 id="main-heading">The comprehensive app to <span class="highlight">connect, chat, and share moments in real-time</span> at the click of a button</h1>
+      <div class="button-container">
+        <!-- عند الضغط هنا يتم نقلك إلى قسم التحميل -->
+        <a href="#download-app" class="request-button" id="request-button">Download Now</a>
+        <button class="another-button" id="another-button">Read more</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- باقي أقسام الصفحة ... -->
+  <!-- قسم About -->
+  <section class="about-project">
+    <div class="container">
+      <h2 id="about-title">What is PenguChat?</h2>
+      <p id="about-description">
+        <span class="highlight">PenguChat </span> is a comprehensive application designed to deliver a seamless, real-time chat experience that's both user-friendly and efficient. The app allows you to easily send messages, photos, videos, and files, with the added convenience of scheduling messages for timely delivery. It also features a voice-to-text conversion to simplify reading, and enables you to browse a wide range of products and services. Join PenguChat now and enjoy a communication experience that blends speed and intelligence, making every conversation more effective and productive!
+      </p>
+      <div class="about-images">
+        <img src="resources/img/1.png" alt="Project Image 1">
+        <img src="resources/img/2.png" alt="Project Image 2">
+      </div>
+    </div>
+    <div class="row" id="services-section">
+      <h2 id="features-title">Why PenguChat is Your Ideal Choice?</h2>
+      <p class="text" id="features-description">
+        "Whether you need to send instant messages, share photos, videos, and files, or even schedule your chats for the perfect moment, PenguChat app offers you seamless and innovative communication solutions that keep you connected with speed and ease."
+      </p>
+    </div>
+  </section>
+
+  <!-- قسم الميزات -->
+  <section class="sectiom-featurs">
+    <div class="row cards">
+      <div class="card" id="card-1">
+        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+        <h3 id="card-1-title">Instant Messaging & Multimedia</h3>
+        <p id="card-1-description">"Engage in real-time chats and effortlessly share photos, videos, and files with friends and colleagues."</p>
+      </div>
+      <div class="card" id="card-2">
+        <ion-icon name="timer-outline"></ion-icon>
+        <h3 id="card-2-title">Scheduled Messaging</h3>
+        <p id="card-2-description">"Plan your messages in advance to ensure they are sent exactly when you need them."</p>
+      </div>
+      <div class="card" id="card-3">
+        <ion-icon name="mic-outline"></ion-icon>
+        <h3 id="card-3-title">Voice-to-Text Conversion</h3>
+        <p id="card-3-description">"Quickly convert voice messages into text, making it easy to catch up on conversations on the go."</p>
+      </div>
+      <div class="card" id="card-4">
+        <ion-icon name="grid-outline"></ion-icon>
+        <h3 id="card-4-title">Browse Products & Services</h3>
+        <p id="card-4-description">"Discover a wide range of products and services directly within the app to meet all your needs."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم تحميل التطبيق -->
+  <section class="download-app" id="download-app">
+    <h2 class="section-title">Download PenguChat App</h2>
+    <div class="container">
+      <div class="logo-container">
+        <img id="logo-img" src="resources/img/app_icon.png" alt="Logo">
+        <span class="logo-text">PenguChat</span>
+      </div>
+      <div class="download-info">
+        <p class="download-text">
+          Download the app now and enjoy an innovative and outstanding communication experience with PenguChat.
+        </p>
+        <div class="download-buttons">
+          <a href="#" class="download-btn app-store">Download on uptodown</a>
+          <!-- زر جديد "Download PenguChat" يقوم بفتح مودال التحميل -->
+          <a href="#" class="download-btn google-play" id="downloadPenguChat">Download PenguChat</a>
+        </div>
+      </div>
+      <div class="phone-preview">
+        <img src="resources/img/phone-mockup.png" alt="PenguChat App Preview" class="phone">
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم كيفية استخدام التطبيق -->
+  <section class="how-to-use" id="how-to-use">
+    <h2>How to Use the Application</h2>
+    <div class="images-stack">
+      <img src="resources/img/7.PNG" alt="Step Image 7">
+      <img src="resources/img/8.PNG" alt="Step Image 8">
+      <img src="resources/img/3.PNG" alt="Step Image 3">
+      <img src="resources/img/4.PNG" alt="Step Image 4">
+      <img src="resources/img/5.PNG" alt="Step Image 5">
+      <img src="resources/img/6.PNG" alt="Step Image 6">
+    </div>
+  </section>
+
+  <!-- قسم الشهادات -->
+  <section class="testimonials">
+    <h2 class="testimonials-title">Testimonials</h2>
+    <div class="testimonials-container">
+      <div class="testimonial">
+        <div class="testimonial-avatar">M</div>
+        <p class="testimonial-text">
+          "The scheduled messaging feature in PenguChat made our communication so much easier and more flexible."
+        </p>
+        <p class="testimonial-author">- Mohammed -</p>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-avatar">S</div>
+        <p class="testimonial-text">
+          "I love that I can send videos of any length without any issues, making my content sharing more unique."
+        </p>
+        <p class="testimonial-author">- Sarah -</p>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-avatar">A</div>
+        <p class="testimonial-text">
+          "The app's intuitive interface makes browsing products very accessible, which is a huge plus."
+        </p>
+        <p class="testimonial-author">- Ahmed -</p>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-avatar">L</div>
+        <p class="testimonial-text">
+          "PenguChat has improved the quality and efficiency of our daily communication; I highly recommend it to everyone."
+        </p>
+        <p class="testimonial-author">- Layla -</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- الفوتر -->
+  <footer id="footer">
+    <div class="footer-content">
+      <div class="footer-image">
+        <img src="resources/img/CC.png" alt="Motivational Image">
+      </div>
+      <div class="motivational-quotes">
+        <h3>Motivational Quotes</h3>
+        <p>"Success is the sum of small efforts repeated every day."</p>
+        <p>"Don't wait for the opportunity, create it."</p>
+      </div>
+      <div class="social-media">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="https://www.instagram.com/penguchat?igsh=cjVyNmNyYzFxMTIz" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="https://www.facebook.com/penguchat" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+        </ul>
+      </div>
+      <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:penguchat@gmail.com">penguchat@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 PenguChat. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- مودال الشروط والأحكام -->
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <!-- زر اختيار اللغة داخل المودال -->
+      <div class="modal-language-selector">
+        <select id="modal-language-select" onchange="changeModalLanguage()">
+          <option value="en" selected>English</option>
+          <option value="ar">العربية</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
+      <!-- محتوى الشروط والأحكام الذي سيتم تعبئته عبر جافا سكريبت -->
+      <div id="modal-terms-content">
+        <!-- سيتم تعبئته افتراضياً باللغة الإنجليزية -->
+      </div>
+    </div>
+  </div>
+
+  <!-- مودال الشركاء -->
+  <div id="partnersModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="partnersClose">&times;</span>
+      <h2>Our Partners</h2>
+      <p>Currently, the app is in its early stages.</p>
+    </div>
+  </div>
+
+  <!-- مودال "About Us" -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="aboutClose">&times;</span>
+      <!-- زر اختيار اللغة داخل المودال -->
+      <div class="modal-language-selector">
+        <select id="modal-about-select" onchange="changeAboutLanguage()">
+          <option value="en" selected>English</option>
+          <option value="ar">العربية</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
+      <!-- محتوى "About Us" الذي سيتم تعبئته عبر جافا سكريبت -->
+      <div id="modal-about-content">
+        <!-- سيتم تعبئته افتراضياً باللغة الإنجليزية -->
+      </div>
+    </div>
+  </div>
+
+  <!-- مودال تحميل الـ APK -->
+  <div id="downloadModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="downloadClose">&times;</span>
+      <h1>PenguChat APK Download</h1>
+      <p>Version: 1.0.0+1</p>
+      <p>Click the button below to download the APK file.</p>
+      <!-- عند النقر يبدأ التحميل مباشرة -->
+      <a href="PenguChat.apk" class="download-link" download>Download Now</a>
+    </div>
+  </div>
+
+  <!-- روابط جافا سكريبت الخارجية -->
+  <script src="resources/index.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  
+  
+</body>
+</html>
